@@ -6,9 +6,15 @@
       service:
         name: openvpn@szappanosauto-client
         state: started
-    - name: Induce an exception to see what happens
-      ansible.builtin.ping:
-        data: crash    
+
+- hosts: servers
+  tasks:
+    - action: ping
+
+- hosts: openvpn
+  become: true
+  become_user: root
+  tasks:    
     - name: Wait 300 seconds, but only start checking after 60 seconds
       wait_for_connection:
         delay: 60
