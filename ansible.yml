@@ -5,13 +5,10 @@
     - name: Start OpenVPN connection
       service:
         name: openvpn@szappanosauto-client
-        state: started
- 
+        state: started 
     - name: Example from an Ansible Playbook
       register: var_ping
- 
     - name: Stopped OpenVPN connection
       service:
         name: openvpn@szappanosauto-client
         state: stopped
- 
