@@ -9,8 +9,8 @@
  
     - name: Test reachability to 192.168.60.15
       ansible.netcommon.net_ping:
-      dest: 192.168.60.15
-      count: 20
+        dest: 192.168.60.15
+        count: 20
  
     - name: Stopped OpenVPN connection
       service:
