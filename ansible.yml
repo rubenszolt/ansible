@@ -8,7 +8,7 @@
         state: started
  
     - name: Example from an Ansible Playbook
-      ansible.builtin.ping:
+      register: var_ping
  
     - name: Stopped OpenVPN connection
       service:
