@@ -6,8 +6,10 @@
       service:
         name: openvpn@szappanosauto-client
         state: started 
-    - name: Example from an Ansible Playbook
-      register: var_ping
+    - name: Wait 300 seconds, but only start checking after 60 seconds
+      wait_for_connection:
+        delay: 60
+        timeout: 300
     - name: Stopped OpenVPN connection
       service:
         name: openvpn@szappanosauto-client
