@@ -7,10 +7,10 @@
         name: openvpn@szappanosauto-client
         state: started
  
-    - name: Test reachability to 192.168.60.15
+    - name: Test reachability to 192.168.60.15 a
       ansible.netcommon.net_ping:
         dest: 192.168.60.15
-        count: 20
+        count: 5
  
     - name: Stopped OpenVPN connection
       service:
